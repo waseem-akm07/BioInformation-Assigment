@@ -9,6 +9,7 @@ class BIO extends Component {
         super(props);
 
         this.state = {
+            id: 0,
             firstName: "",
             lastName: "",
             companyName: ""
@@ -22,6 +23,7 @@ class BIO extends Component {
     onSubmit = (event)=>{
         event.preventDefault();
         const data = this.state;
+        data.id = Math.random();
         this.props.addData({ data });
         this.setState({ firstName: "", lastName: "", companyName: "" });
     }

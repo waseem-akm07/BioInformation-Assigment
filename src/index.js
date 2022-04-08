@@ -4,16 +4,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createRoot } from "react-dom/client";
 
-
+import { PersistGate } from 'redux-persist/integration/react'
 import { Provider } from 'react-redux';
-import store from './redux/store'
+import main from './redux/store'
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement)
 
 root.render(
-  <Provider store={store}>
-    <App />
+  <Provider store={main.store}>
+    <PersistGate loading={null} persistor={main.persistor}>
+      <App />
+    </PersistGate>
   </Provider>
 );
 

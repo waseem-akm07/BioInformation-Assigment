@@ -11,7 +11,7 @@ class BIOList extends Component {
         <h1>List</h1>
         <ul>
           {list && list.map(el => (
-            <div>
+            <div key={el.id}>
               <label>FirstName : </label><label>{el.data && el.data.firstName}</label> <br />
               <label>LastName : </label><label>{el.data && el.data.lastName}</label>  <br />
               <label>Company : </label><label>{el.data && el.data.companyName}</label> <br />
